@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <title>{%- if page.title -%}{{ page.title | escape }}{%- else -%}{{ site.title | escape }}{%- endif -%}</title>
+    <meta name="description" content="{%- if page.description -%}{{ page.description | escape }}{%- else -%}{{ site.description | escape }}{%- endif -%}">
+    <meta name="generator" content="Jekyll v{{ jekyll.version }}" />
+    <meta property="og:title" content="{%- if page.title -%}{{ page.title | escape }}{%- else -%}{{ site.title | escape }}{%- endif -%}" />
+    <meta name="author" content="{{ site.author.name | default: site.author }}" />
+    <meta property="og:locale" content="{{ page.lang | default: site.lang | default: "en" }}" />
+    <meta property="og:description" content="{%- if page.description -%}{{ page.description | escape }}{%- else -%}{{ site.description | escape }}{%- endif -%}" />
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}" />
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" />
+    <meta property="og:site_name" content="{{ site.title | escape }}" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="{%- if page.title -%}{{ page.title | escape }}{%- else -%}{{ site.title | escape }}{%- endif -%}" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"{{ site.author.name | default: site.author }}"},"description":"{{ page.description | default: site.description | escape }}","headline":"{{ page.title | default: site.title | escape }}","name":"{{ site.title | escape }}","sameAs":["{{ site.author.github | default: site.github.owner_url }}","{{ site.author.linkedin | default: site.linkedin.url }}","{{ site.author.website | default: site.url }}"],"url":"{{ page.url | replace:'index.html','' | absolute_url }}"}
+    </script>
+    <!-- End Jekyll SEO tag -->
+
+    <!-- Custom favicon links -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+
+    <!-- Additional meta tags for better favicon support -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+    <link type="application/atom+xml" rel="alternate" href="{{ "/feed.xml" | relative_url }}" title="{{ site.title | escape }}" />
+  </head>
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

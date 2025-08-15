@@ -1,7 +1,7 @@
 # ---- Site basics ----
-title: "Dongchan (Don) Kim"
-tagline: "Senior Staff Scientist • AI/ML Leader"
-description: "Applied ML/LLM and multi-modal systems: large-scale search & recommendations, real-time decisioning, representation learning, distillation, ensembles, transfer learning."
+title: "DonK Projects"
+tagline: "Open Source Projects & Code Showcase"
+description: "A showcase of my public GitHub repositories and open source contributions in AI/ML, search & recommendations, and real-time systems."
 url: "https://dongchankim-io.github.io"   # Canonical URL for this GitHub Pages site
 baseurl: ""                               # Keep empty for user/organization sites
 
@@ -20,19 +20,17 @@ minima:
   social_links:
     - { platform: github,   user_url: "https://github.com/dongchankim-io" }
     - { platform: linkedin, user_url: "https://www.linkedin.com/in/YOUR-LINKEDIN" }
+  # Favicon configuration
+  favicon: /favicon.ico
+  favicon_png: /favicon.png
 
 # Show specific pages in the top nav (create these files in repo root)
 header_pages:
   - index.md
-  - about.md
-  - projects.md
-  - publications.md
-  - blog.md   # tip: make this a redirect to your external blog
 
 # ---- Build & content settings ----
 markdown: kramdown
 highlighter: rouge
-permalink: /blog/:title/
 
 kramdown:
   input: GFM
@@ -46,9 +44,6 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
-  publications:
-    output: true
-    permalink: /publications/:path/
 
 # ---- Defaults ----
 defaults:
@@ -64,9 +59,7 @@ defaults:
   - scope: { path: "", type: "projects" }
     values:
       layout: page
-  - scope: { path: "", type: "publications" }
-    values:
-      layout: page
+
 
 # ---- Author / SEO metadata ----
 author:
@@ -96,8 +89,6 @@ social:
 exclude:
   - README.md
   - LICENSE
-  - Gemfile
-  - Gemfile.lock
   - node_modules
   - package.json
   - package-lock.json

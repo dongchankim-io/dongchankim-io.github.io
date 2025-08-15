@@ -1,0 +1,679 @@
+// Custom styles for hero, chips, cards, timeline
+:root {
+  --card-r: 16px;
+  --border: rgba(0, 128, 128, 0.15);
+  --bg-grad: linear-gradient(135deg, #ffffff 0%, #f0f8f8 100%);
+  --primary: #008080;
+  --primary-dark: #006666;
+  --primary-light: #00a3a3;
+  --secondary: #2c5f5f;
+  --accent: #00b3b3;
+  --accent-light: #00cccc;
+  --text-primary: #1a3a3a;
+  --text-secondary: #4a6b6b;
+  --shadow: 0 4px 12px rgba(0, 128, 128, 0.1);
+  --shadow-hover: 0 8px 24px rgba(0, 128, 128, 0.2);
+}
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --border: rgba(255,255,255,.12);
+      --bg-grad: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));
+    }
+  }
+  
+  .hero {
+  margin: 2rem 0 3rem;
+  padding: 3rem 2rem;
+  border: 2px solid var(--border);
+  border-radius: var(--card-r);
+  background: var(--bg-grad);
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--bg-teal);
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: var(--text-primary);
+  font-size: 2.5rem;
+}
+
+.hero .alt-name { 
+  font-weight: 600; 
+  color: var(--primary);
+  opacity: 0.9; 
+}
+
+.hero .tagline { 
+  margin: 0.5rem 0; 
+  font-size: 1.3rem; 
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.hero .meta { 
+  margin: 0 0 1rem; 
+  font-size: 1rem; 
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.hero .blurb { 
+  margin: 1rem 0 1.5rem; 
+  max-width: 70ch;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+  
+  .chips { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 0.6rem; 
+  margin: 1.5rem 0 2rem; 
+  justify-content: center;
+}
+
+.chip {
+  display: inline-block; 
+  padding: 0.4rem 1rem; 
+  border-radius: 999px;
+  border: 2px solid var(--primary-light); 
+  font-size: 0.9rem; 
+  color: var(--primary);
+  background: rgba(0, 128, 128, 0.1);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.chip:hover {
+  background: var(--primary-light);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.cta { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 1rem; 
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block; 
+  padding: 0.8rem 1.5rem; 
+  border-radius: 12px; 
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn:hover { 
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+  
+  .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 3rem;
+}
+
+.card {
+  border: 2px solid var(--border);
+  border-radius: var(--card-r);
+  padding: 1.5rem;
+  background: var(--bg-grad);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bg-teal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-light);
+}
+
+.card h3 { 
+  margin: 0 0 0.8rem; 
+  font-weight: 700; 
+  color: var(--text-primary);
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.card .tags {
+  display: flex; 
+  gap: 0.5rem; 
+  flex-wrap: wrap; 
+  margin-top: 1rem;
+}
+
+.card .tags span {
+  border: 1px solid var(--primary-light);
+  border-radius: 999px; 
+  padding: 0.3rem 0.8rem; 
+  font-size: 0.85rem;
+  color: var(--primary);
+  background: rgba(0, 128, 128, 0.1);
+  font-weight: 500;
+}
+  
+  .timeline { list-style:none; padding-left:0; }
+.timeline li { display:flex; gap:.8rem; margin:.6rem 0; }
+.timeline .time { min-width: 9ch; font-weight:600; opacity:.8; }
+.timeline .event { flex:1; }
+
+// Featured projects section
+.featured-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.project-preview {
+  border: 1px solid var(--border);
+  border-radius: var(--card-r);
+  padding: 1.2rem;
+  background: var(--bg-grad);
+  text-align: center;
+}
+
+.project-preview h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.project-preview p {
+  margin: 0 0 1rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.btn-small {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  margin: 0 0.2rem;
+}
+
+.btn-small:hover {
+  background: rgba(0,0,0,.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-small:hover {
+    background: rgba(255,255,255,.06);
+  }
+}
+
+// Project cards on projects page
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: var(--card-r);
+  padding: 1.5rem;
+  background: var(--bg-grad);
+  margin-bottom: 1.5rem;
+}
+
+.project-card h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  color: #0366d6;
+}
+
+.project-card p {
+  margin: 0 0 1rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.project-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tech {
+  background: rgba(3, 102, 214, 0.1);
+  color: #0366d6;
+  border: 1px solid rgba(3, 102, 214, 0.2);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+// Loading and error states
+.loading-state, .error-state {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--card-r);
+  background: var(--bg-grad);
+}
+
+.loading-state p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.error-state p {
+  margin: 0;
+  color: #d73a49;
+}
+
+// Repository grid layout
+.repositories-grid {
+  margin: 1.5rem 0;
+}
+
+.language-section {
+  margin-bottom: 2rem;
+}
+
+.language-header {
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+// Repository cards
+.repository-card {
+  border: 2px solid var(--border);
+  border-radius: var(--card-r);
+  padding: 1.5rem;
+  background: white;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.repository-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bg-teal);
+}
+
+.repository-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-light);
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.repo-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.repo-name a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.repo-name a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.stars {
+  background: rgba(0, 128, 128, 0.1);
+  color: var(--primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid var(--primary-light);
+}
+
+.repo-description {
+  margin: 0 0 0.8rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.repo-topics {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+
+.topic-tag {
+  background: rgba(0, 128, 128, 0.1);
+  color: var(--primary);
+  border: 1px solid var(--primary-light);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.topic-tag:hover {
+  background: var(--primary-light);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.repo-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.repo-language {
+  font-weight: 500;
+}
+
+.repo-updated {
+  font-style: italic;
+}
+
+.repo-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+// Statistics section
+.stats-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--card-r);
+  background: var(--bg-grad);
+}
+
+.stats-section h3 {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  .stat-item {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0366d6;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// No repositories state
+.no-repos {
+  text-align: center;
+  padding: 2rem;
+}
+
+.no-repos h3 {
+  margin: 0 0 1rem;
+  color: #586069;
+}
+
+.no-repos p {
+  margin: 0.5rem 0;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+// Section styling
+.projects-section {
+  margin: 4rem 0;
+  padding: 2rem 0;
+}
+
+.projects-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.projects-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--bg-teal);
+  border-radius: 2px;
+}
+
+.section-description {
+  text-align: center;
+  max-width: 70ch;
+  margin: 0 auto 3rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+// Contact section
+.contact-section {
+  margin: 4rem 0;
+  padding: 3rem 0;
+  border-top: 2px solid var(--border);
+  background: var(--bg-light);
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.contact-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--bg-teal);
+  border-radius: 2px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border: 2px solid var(--border);
+  border-radius: var(--card-r);
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bg-teal);
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-light);
+}
+
+.contact-item h3 {
+  margin: 0 0 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.contact-item p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.contact-item a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+// Footer styles - using more specific selectors to override minima theme
+body .site-footer {
+  margin-top: 4rem !important;
+  padding: 3rem 0 !important;
+  border-top: 2px solid var(--border) !important;
+  background: var(--primary) !important;
+  
+  .footer-content {
+    text-align: center;
+    
+    p {
+      margin: 0 !important;
+      color: white !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      opacity: 1 !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// GitHub profile link styling
+.github-profile-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.github-profile-link:hover {
+  color: var(--primary-dark);
+  border-bottom-color: var(--primary);
+  text-decoration: none;
+}
