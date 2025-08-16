@@ -85,10 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
       return response.json();
     })
     .then(repositories => {
-      // Filter out this repository (dongchankim-io.github.io) and forks
-      const filteredRepos = repositories.filter(repo => 
-        repo.name !== 'dongchankim-io.github.io' && !repo.fork
-      );
+      // Show all repositories (including this one) but filter out forks
+      const filteredRepos = repositories.filter(repo => !repo.fork);
       
       if (filteredRepos.length === 0) {
         containerEl.innerHTML = `

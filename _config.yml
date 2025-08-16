@@ -5,6 +5,9 @@ description: "A showcase of my public GitHub repositories and open source contri
 url: "https://dongchankim-io.github.io"   # Canonical URL for this GitHub Pages site
 baseurl: ""                               # Keep empty for user/organization sites
 
+# GitHub repository information
+repository: dongchankim-io/dongchankim-io.github.io
+
 # Custom links (handy in templates)
 personal_website: "https://dongchankim.io"
 external_blog: "https://blog.dongchankim.io"
@@ -23,7 +26,7 @@ minima:
 
   # Favicon configuration
   favicon: /favicon.ico
-  favicon_png: /favicon.png
+  # favicon_png: /favicon.png
 
 # Show specific pages in the top nav (create these files in repo root)
 header_pages:
@@ -70,9 +73,9 @@ author:
 # Plugins supported by GitHub Pages
 plugins:
   - jekyll-seo-tag
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-redirect-from
+  # - jekyll-feed
+  # - jekyll-sitemap
+  # - jekyll-redirect-from
 
 # jekyll-seo-tag extra fields (helps discovery)
 social:
