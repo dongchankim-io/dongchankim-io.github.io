@@ -29,7 +29,8 @@ permalink: /
 <section id="tools" class="tools-section">
   <h2>Tools</h2>
   <!-- Card title and description are fetched from each tool's index.html <title> and <meta name="description"> -->
-  <div id="tools-grid" class="tools-grid" data-tools="/tools/401k_calculator/" />
+  <div id="tools-grid" class="tools-grid" data-tools="/tools/401k_calculator/">
+  </div>
 </section>
 
 <section id="projects" class="projects-section">
