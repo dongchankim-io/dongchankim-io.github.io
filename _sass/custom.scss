@@ -65,6 +65,83 @@
   font-weight: 500;
 }
 
+.tools-section {
+  margin: 4rem 0;
+  padding: 2rem 0;
+}
+
+.tools-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.tools-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--bg-teal);
+  border-radius: 2px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tool-card {
+  display: block;
+  padding: 1.5rem;
+  border: 2px solid var(--border);
+  border-radius: var(--card-r);
+  background: var(--bg-grad);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bg-teal);
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-light);
+  text-decoration: none;
+}
+
+.tool-card h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.tool-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
 .hero .meta { 
   margin: 0 0 1rem; 
   font-size: 1rem; 
