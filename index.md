@@ -27,10 +27,13 @@ permalink: /
 </div>
 
 <section id="tools" class="tools-section">
-  <h2>Tools</h2>
-  <!-- Card title and description are fetched from each tool's index.html <title> and <meta name="description"> -->
-  <div id="tools-grid" class="tools-grid" data-tools="/tools/401k_calculator/">
-  </div>
+<h2>Tools</h2>
+<div class="tools-grid">
+<a href="/tools/401k_calculator/" class="tool-card">
+<h3>401k Front-Load Contribution Planner</h3>
+<p>Plan a two-phase 401k contribution strategy: front-load paychecks to maximize tax benefits, then contribute just enough to secure the full company match.</p>
+</a>
+</div>
 </section>
 
 <section id="projects" class="projects-section">
@@ -73,35 +76,6 @@ permalink: /
     </div>
   </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const grid = document.getElementById('tools-grid');
-  const paths = grid.dataset.tools.split(/\s+/).filter(Boolean);
-
-  paths.forEach(function(path) {
-    var link = document.createElement('a');
-    link.href = path;
-    link.className = 'tool-card';
-    link.innerHTML = '<h3>Loading…</h3>';
-    grid.appendChild(link);
-
-    fetch(path)
-      .then(function(r) { return r.text(); })
-      .then(function(html) {
-        var doc = new DOMParser().parseFromString(html, 'text/html');
-        var title = doc.querySelector('title');
-        var desc = doc.querySelector('meta[name="description"]');
-        link.innerHTML =
-          '<h3>' + (title ? title.textContent : path) + '</h3>' +
-          '<p>' + (desc ? desc.getAttribute('content') : '') + '</p>';
-      })
-      .catch(function() {
-        link.innerHTML = '<h3>' + path + '</h3>';
-      });
-  });
-});
-</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
